@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Password Manager — ดาวน์โหลด</title>
+  <meta name="description" content="เว็บไซต์ดาวน์โหลด Password Manager สำหรับ Windows" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #toast{
+      position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%);
+      padding: 10px 14px; border-radius: 999px; border:1px solid var(--line);
+      background: rgba(0,0,0,.65); color:white; font-weight:700; font-size: 13px;
+      opacity:0; pointer-events:none; transition: opacity .18s ease, transform .18s ease;
+      box-shadow: var(--shadow);
+    }
+    @media (prefers-color-scheme: light){ #toast{ background: rgba(0,0,0,.80); } }
+    #toast.show{ opacity:1; transform: translateX(-50%) translateY(-2px); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./">
+        <img src="assets/logo.svg" alt="logo">
+        <div>
+          <div class="title">Password Manager</div>
+          <div class="small">ดาวน์โหลดตัวติดตั้ง (Windows)</div>
+        </div>
+      </a>
+      <div class="badge">อัปเดตล่าสุด: 2026-02-18</div>
+    </div>
+
+    <div class="hero">
+      <div class="card">
+        <div class="card-inner">
+          <div class="badge">🔒 เก็บรหัสผ่านอย่างเป็นระเบียบ • ใช้งานง่าย</div>
+          <h1 class="h1">ดาวน์โหลด Password Manager</h1>
+          <p class="lead">
+            ดาวน์โหลดไฟล์โปรแกรมสำหรับ Windows แล้วติดตั้งได้ทันที
+            (ถ้า Windows เตือน “ไฟล์จากอินเทอร์เน็ต” ให้กด <b>More info</b> → <b>Run anyway</b>)
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="Password%20Manager.exe" download>
+              ⬇️ ดาวน์โหลด (.exe)
+            </a>
+            <a class="btn" href="#verify">
+              ✅ วิธีตรวจสอบไฟล์
+            </a>
+          </div>
+
+          <div class="kv">
+            <div class="item">
+              <div class="k">ไฟล์</div>
+              <div class="v">Password Manager.exe</div>
+            </div>
+            <div class="item">
+              <div class="k">ขนาด</div>
+              <div class="v">39.58 MB</div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="small">
+            หมายเหตุความปลอดภัย: ดาวน์โหลดจากแหล่งที่เชื่อถือได้เท่านั้น และอย่าแชร์รหัสผ่าน/รหัสหลักให้ใคร
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <h2 style="margin:0 0 8px; font-weight:900;">วิธีติดตั้ง (Windows)</h2>
+          <div class="list">
+            <div class="li"><div class="dot"></div><div>1) กดปุ่มดาวน์โหลด แล้วเปิดไฟล์ <b>.exe</b></div></div>
+            <div class="li"><div class="dot"></div><div>2) ถ้ามีหน้าต่าง Windows SmartScreen ขึ้น ให้กด <b>More info</b> → <b>Run anyway</b></div></div>
+            <div class="li"><div class="dot"></div><div>3) ทำตามขั้นตอนบนหน้าจอจนเสร็จ</div></div>
+            <div class="li"><div class="dot"></div><div>4) เปิดโปรแกรมจาก Desktop/Start Menu</div></div>
+          </div>
+
+          <div class="hr"></div>
+
+          <h2 id="verify" style="margin:0 0 8px; font-weight:900;">ตรวจสอบไฟล์ก่อนรัน</h2>
+          <p class="small" style="margin-top:0;">
+            เพื่อความมั่นใจ คุณสามารถตรวจสอบ SHA‑256 ของไฟล์ที่ดาวน์โหลดว่า “ตรงกัน” กับค่าด้านล่าง
+          </p>
+          <div class="codebox" aria-label="sha256">b9b290f986fba13acea71701ab229ec9f49cc2f5120dd2962608fbf791c89a75</div>
+          <div class="actions" style="margin-top:12px;">
+            <button id="copyHash" class="btn" type="button" data-hash="b9b290f986fba13acea71701ab229ec9f49cc2f5120dd2962608fbf791c89a75">📋 คัดลอก SHA‑256</button>
+          </div>
+          <div class="small" style="margin-top:10px;">
+            วิธีเช็คใน Windows: เปิด PowerShell แล้วพิมพ์
+          </div>
+          <div class="codebox">Get-FileHash ".\Password Manager.exe" -Algorithm SHA256</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <div class="card-inner">
+          <h2 style="margin:0 0 8px; font-weight:900;">ฟีเจอร์ที่มักต้องมี</h2>
+          <div class="list">
+            <div class="li"><div class="dot"></div><div>บันทึกข้อมูลบัญชี (เว็บไซต์/ชื่อผู้ใช้/รหัสผ่าน) เป็นหมวดหมู่</div></div>
+            <div class="li"><div class="dot"></div><div>ค้นหา/คัดลอกข้อมูลได้เร็ว</div></div>
+            <div class="li"><div class="dot"></div><div>แนะนำให้ตั้ง “Master Password” ที่เดายาก</div></div>
+            <div class="li"><div class="dot"></div><div>สำรองข้อมูลไว้เสมอ (Backup)</div></div>
+          </div>
+          <div class="hr"></div>
+          <div class="small">*คุณสามารถแก้ข้อความส่วนนี้ให้ตรงกับฟีเจอร์จริงของโปรแกรมได้</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <h2 style="margin:0 0 8px; font-weight:900;">คำถามที่พบบ่อย (FAQ)</h2>
+          <div class="list">
+            <div class="li"><div class="dot"></div><div><b>ทำไม Windows เตือน?</b><br><span class="small">ไฟล์ .exe ที่ไม่ได้เซ็นลายเซ็นดิจิทัลมักถูกเตือนเป็นปกติ ให้ตรวจสอบ SHA‑256 และดาวน์โหลดจากแหล่งเดิม</span></div></div>
+            <div class="li"><div class="dot"></div><div><b>ใช้กับ Mac/มือถือได้ไหม?</b><br><span class="small">หน้านี้เตรียมไฟล์สำหรับ Windows เท่านั้น</span></div></div>
+            <div class="li"><div class="dot"></div><div><b>อัปเดตเวอร์ชันทำยังไง?</b><br><span class="small">อัปโหลดไฟล์ .exe รุ่นใหม่มาแทนไฟล์เดิม แล้วอัปเดตวันที่/แฮช</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© 2026 Password Manager</div>
+      <div>สร้างหน้าเว็บแบบ Static (HTML/CSS/JS)</div>
+    </div>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
