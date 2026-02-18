@@ -13,8 +13,8 @@ function copyText(text){
 }
 
 window.addEventListener("DOMContentLoaded", ()=>{
-  const btn = $("#copyHash");
+  const btn = $("#copyDriveLink");
   if(btn){
-    btn.addEventListener("click", ()=> copyText(btn.dataset.hash));
+    btn.addEventListener("click", ()=> copyText(btn.dataset.url));
   }
 });
